@@ -2,6 +2,10 @@
 
 ![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)
 
+Project  called Interactive rating component, simple app that introduct to javascript and help to understand how to use js to make cool app. Level - newbie
+
+
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
