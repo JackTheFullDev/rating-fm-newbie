@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  
+  :root
+  {
+    --primary-Orange:hsl(25, 97%, 53%);
+    --Neutral-White: hsl(0, 0%, 100%);
+    --Neutral-LightGrey:hsl(217, 12%, 63%);
+    --Neutral-MediumGrey: hsl(216, 12%, 54% , 20%);
+    --Neutral-DarkBlue: hsl(213, 19%, 18%);
+    --Neutral-VeryDarkBlue: hsl(216, 12%, 8%);
+  }
+  body
+  {
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--Neutral-VeryDarkBlue);
+    color:white;
+    
+  }
+  p
+  {
+    font-size: 15px;
+  }
+  .main-container
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 420px;
+    background-color: var(--Neutral-DarkBlue);
+    border-radius: 30px;
+   
+  }
+  #section-container
+  {
+    display: flex;
+    flex-direction: column;
+    margin:40px;
+  
+  }
+  #star
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: var(--Neutral-MediumGrey);
+  }
+  #star img
+  {
+    width: 40%;
+    height: 40%;
+  }
+  #main-title
+  {
+    margin-top:10px;
+    margin-bottom: -20px;
+    font-weight: 500;
+  }
+  #main-p p
+  {
+    color: var(--Neutral-LightGrey);
+    line-height: 150%;
+    
+  }
+  #button-section
+  {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  #button-section button
+  {
+    border-radius: 50%;
+    border-style: none;
+    background-color: var(--Neutral-MediumGrey);
+    color:var(--Neutral-LightGrey);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #button-section button:hover
+  {
+    background-color: var(--primary-Orange);
+    color: var(--Neutral-White);
+  }  
+  #button-section button:focus
+  {
+    background-color: var(--Neutral-LightGrey);
+    color: white;
+  }
+
+
+  #submit-btn
+  {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  #submit-btn button
+  {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+    letter-spacing:2px;
+    background-color: var(--primary-Orange);
+    color: var(--Neutral-White);
+    border-style: none;
+    cursor: pointer;
+  }
+  #submit-btn button:hover
+{
+  background-color:var(--Neutral-White);
+    color: var(--primary-Orange);
+}
+
+/*Second Section*/
+#second-main-container
+{
+  display: none;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 420px;
+    background-color: var(--Neutral-DarkBlue);
+    border-radius: 30px;
+}
+.second-section-container
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+#selected-p
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 35px;
+  width: 50%;
+  border-radius: 30px;
+  color: var(--primary-Orange);
+ 
+  background-color:hsl(216, 12%, 8%,30%);
+}
+.thanks-section
+{
+  display: flex;
+  justify-content: center;
+}
+#thanks-h2
+{
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+#thanks-p
+{
+  text-align:center;
+  color:var(--Neutral-LightGrey);
+  line-height: 150%;
+  width: 340px;
+  
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Rating state start -->
+  <div class="main-container">
+    <div id="section-container">
+    <div id="star">
+      <img src="/images/icon-star.svg" alt="star-icon">
+    </div>
+    <div id="main-title">
+      <h2>How did we do?</h2>
+    </div>
+    <div id="main-p">
+      <p> Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</h2>
+    </div>
+    <div id="button-section">
+      <button id="btn-rate1" onclick="getClickID(this.id)"value="1" >1</button>
+      <button id="btn-rate2" onclick="getClickID(this.id)"value="2">2</button>
+      <button id="btn-rate3" onclick="getClickID(this.id)"value="3">3</button>
+      <button id="btn-rate4" onclick="getClickID(this.id)"value="4">4</button>
+      <button id="btn-rate5" onclick="getClickID(this.id)"value="5">5</button>
+    </div>
+    <div id="submit-btn">
+      <button>SUBMIT</button>
+    </div>
+  </div>
+  </div>
+<!-- Rating state end -->
+  
+  <div id="second-main-container"> 
+    <div class="second-section-container">
+      <div class="thanks-section">
+        <img src="/images/illustration-thank-you.svg">
+       </div>
+       <div id="selected-p">
+        <p>You selected <span id="result">5</span> out of 5</p>
+       </div>
+        <div id="thanks-h2"></div>
+          <h2>Thank you!</h2>
+          <div id="thanks-p">
+            <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+              don’t hesitate to get in touch!</p>
+          </div>
+        </div>
+      </div>
+      
+  
+  <div class="attribution">
+    Challenge by <a  rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jack</a>.
+  </div>
+  <script>
+    
+    const pickedResult= document.getElementById("result");
+    const submitBtn= document.getElementById("submit-btn");
+    const SecondmainSection=document.getElementById("second-main-container");
+    
+    submitBtn.addEventListener("click",function()
+  {
+ // alert("its me!")
+        SecondmainSection.style.display="block";
+  });
+
+  function getClickID(clickID)
+   {
+    
+  
+      const IdButton=document.getElementById(clickID).value;
+        // alert(IdButton);// display value of button
+      pickedResult.innerHTML=IdButton;
+    
+       
+    };
+        
+
+  </script>
+</body>
+</html>
